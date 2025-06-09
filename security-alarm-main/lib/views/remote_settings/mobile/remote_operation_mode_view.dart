@@ -266,32 +266,19 @@ class _RemoteOperationModeViewState extends State<RemoteOperationModeView> {
   }
 
   void _sendSms(String command, String operationType) async {
-    if (_mainProvider.selectedDevice == null) {
-      toastGenerator(translate('please_select_device_first'));
-      // Revert the switch state
-      setState(() {
-        if (operationType == 'burglar_mode') {
-          _isBurglarModeActive = !_isBurglarModeActive;
-        } else if (operationType == 'relay_mode') {
-          _isRelayModeActive = !_isRelayModeActive;
-        }
-      });
-      return;
-    }
-
     try {
       setState(() {
         _isLoading = true;
       });
       
-      final phoneNumber = _mainProvider.selectedDevice!.devicePhone;
+      final phoneNumber = _mainProvider.selectedDevice.devicePhone;
       
       // Send the SMS
       final result = await injector<SMSRepository>().doSendSMS(
         message: command,
         phoneNumber: phoneNumber,
         smsCoolDownFinished: _mainProvider.smsCooldownFinished,
-        isManager: _mainProvider.selectedDevice!.isManager,
+        isManager: _mainProvider.selectedDevice.isManager,
         showConfirmDialog: false,
       );
       

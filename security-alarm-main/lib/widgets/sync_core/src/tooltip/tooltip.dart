@@ -280,13 +280,13 @@ class SfTooltipState extends State<SfTooltip>
         if (renderBox != null) {
           renderBox!.animationFactor = tooltipAnimation.value;
         }
-        return child!;
+        return child;
       },
       child: TooltipRenderObject(
           template: _template,
           tooltipAnimation: tooltipAnimation,
           tooltipState: this,
-          animationController: animationController!),
+          animationController: animationController),
     );
   }
 
@@ -559,7 +559,7 @@ class TooltipRenderBox extends RenderShiftedBox {
     double paddingTop = 0;
     final Rect bounds = _boundaryRect.translate(-offset.dx, -offset.dy);
     final Offset tooltipLocation =
-        _getTemplateLocation(_tooltipRect!, bounds, offset);
+        _getTemplateLocation(_tooltipRect, bounds, offset);
     Offset arrowLocation = Offset(_x! - _templateSize.width / 2,
         _isOutOfBoundInTop ? _y! : _y! - _templateArrowHeight);
     if (_y! < bounds.top + offset.dy) {

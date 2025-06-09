@@ -53,8 +53,8 @@ class GeneralSettingsProvider extends ChangeNotifier {
     try {
       // In a real implementation, you would load these values from the device model
       // For now, we'll use default values
-      _alarmDuration = device?.alarmDuration?.toDouble() ?? 120;
-      _callDuration = device?.callDuration?.toDouble() ?? 10;
+      _alarmDuration = device?.alarmDuration.toDouble() ?? 120;
+      _callDuration = device?.callDuration.toDouble() ?? 10;
       _controlRelaysWithRemote = device?.controlRelaysWithRemote ?? true;
       _monitoring = device?.monitoring ?? false;
       _remoteReporting = device?.remoteReporting ?? true;

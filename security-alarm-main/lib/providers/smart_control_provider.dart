@@ -322,7 +322,7 @@ class SmartControlProvider extends ChangeNotifier {
       _isLoading = true;
       notifyListeners();
       
-      final allControls = await _repository.getSmartControlsByDeviceId(_mainProvider!.selectedDevice!.id!);
+      final allControls = await _repository.getSmartControlsByDeviceId(_mainProvider!.selectedDevice.id!);
       
       // Filter to get only custom controls
       final customControls = allControls.where(
@@ -346,7 +346,7 @@ class SmartControlProvider extends ChangeNotifier {
       // Create new control with incremented name
       final newControlType = '$customControlPrefix $nextNumber';
       final newControl = SmartControl(
-        deviceId: _mainProvider!.selectedDevice!.id!,
+        deviceId: _mainProvider.selectedDevice.id!,
         controlType: newControlType,
         speakerEnabled: false,
         remoteCodeEnabled: false,

@@ -226,11 +226,9 @@ class _EditDeviceViewMobileState extends State<EditDeviceViewMobile> {
 
     for (int i = 0; i < devices.length; i++) {
       final device = devices[i];
-      if (device != null) {
-        _deviceNameControllers[i] = TextEditingController(text: device.deviceName);
-        _devicePhoneControllers[i] = TextEditingController(text: device.devicePhone);
-      }
-    }
+      _deviceNameControllers[i] = TextEditingController(text: device.deviceName);
+      _devicePhoneControllers[i] = TextEditingController(text: device.devicePhone);
+        }
   }
 
   @override
@@ -561,9 +559,6 @@ class _EditDeviceViewMobileState extends State<EditDeviceViewMobile> {
     }
 
     final device = _mainProvider!.devices[index];
-    if (device == null) {
-      return const SizedBox.shrink();
-    }
 
     // Ensure controllers exist for this index
     if (_deviceNameControllers[index] == null) {

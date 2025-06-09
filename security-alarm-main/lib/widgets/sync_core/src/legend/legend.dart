@@ -714,7 +714,7 @@ class _SfLegendState extends State<SfLegend> {
               ? MainAxisAlignment.start
               : MainAxisAlignment.end,
           children: <Widget>[
-            widget.title!,
+            widget.title,
             if (widget.overflowMode == LegendOverflowMode.scroll)
               (widget.width != null || widget.height != null)
                   ? Expanded(
@@ -798,7 +798,7 @@ class _SfLegendState extends State<SfLegend> {
         current = Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            widget.title!,
+            widget.title,
             Flexible(
               child: widget.overflowMode == LegendOverflowMode.scroll
                   ? SingleChildScrollView(
@@ -891,7 +891,7 @@ class _SfLegendState extends State<SfLegend> {
   }
 
   EdgeInsetsGeometry _getEffectiveEdgeInsets() {
-    final Offset offset = widget.offset!;
+    final Offset offset = widget.offset;
     final LegendPosition legendPosition = widget.position;
     switch (legendPosition) {
       case LegendPosition.top:
@@ -1233,7 +1233,7 @@ class _LegendItemState extends State<_LegendItem>
     if (widget.shader != null &&
         details.color != null &&
         !_toggleAnimationController.isDismissed) {
-      current = _buildShaderMask(details.color!, current);
+      current = _buildShaderMask(details.color, current);
     }
 
     return current;
@@ -1472,7 +1472,7 @@ class _LegendIconShape extends CustomPainter {
     if (shader != null) {
       paint.shader = shader;
     } else if (color != null) {
-      paint.color = color!;
+      paint.color = color;
     }
 
     return paint;
@@ -1482,8 +1482,8 @@ class _LegendIconShape extends CustomPainter {
     if (iconStrokeWidth != null && color != null) {
       return Paint()
         ..style = PaintingStyle.stroke
-        ..color = color!
-        ..strokeWidth = iconStrokeWidth!;
+        ..color = color
+        ..strokeWidth = iconStrokeWidth;
     }
 
     return iconBorder?.toPaint();
@@ -1748,7 +1748,7 @@ class _SolidBarLegendState extends State<_SolidBarLegend> {
         final double textWidth = refCurrentTextWidth + refNextTextWidth;
         return _getTrimText(
             currentText,
-            widget.textStyle!,
+            widget.textStyle,
             _segmentSize.width + widget.itemSpacing! / 2,
             _textPainter,
             textWidth,
@@ -2005,7 +2005,7 @@ class __SolidBarLegendItemState extends State<_SolidBarLegendItem> {
         startText != null) {
       return Stack(
         children: <Widget>[
-          _getAlignedTextWidget(startTextOffset!, startText, false),
+          _getAlignedTextWidget(startTextOffset, startText, false),
           _getAlignedTextWidget(textOffset, text, false),
         ],
       );
@@ -2281,7 +2281,7 @@ class _GradientBarLegendState extends State<_GradientBarLegend> {
               _getTextOffset(text, positionIndex, length - 1, slab),
               _isOverlapSegmentText));
         }
-        _colors.add(item.color!);
+        _colors.add(item.color);
       }
     }
   }
@@ -2307,7 +2307,7 @@ class _GradientBarLegendState extends State<_GradientBarLegend> {
         if (widget.labelOverflow == LegendLabelOverflow.ellipsis) {
           if (widget.labelsPlacement == LegendLabelsPlacement.betweenItems) {
             final double textWidth = refCurrentTextWidth + refNextTextWidth;
-            startText = _getTrimText(startText, widget.textStyle!, slab,
+            startText = _getTrimText(startText, widget.textStyle, slab,
                 _textPainter, textWidth, refNextTextWidth);
           }
         }
@@ -2361,7 +2361,7 @@ class _GradientBarLegendState extends State<_GradientBarLegend> {
           _isOverlapSegmentText) {
         if (widget.labelsPlacement == LegendLabelsPlacement.betweenItems) {
           final double textWidth = refCurrentTextWidth + refNextTextWidth;
-          return _getTrimText(currentText, widget.textStyle!, slab,
+          return _getTrimText(currentText, widget.textStyle, slab,
               _textPainter, textWidth, refNextTextWidth, isLastInsideItem);
         }
       }
@@ -2371,7 +2371,7 @@ class _GradientBarLegendState extends State<_GradientBarLegend> {
       _isOverlapSegmentText = textWidth > slab;
       if (_isOverlapSegmentText) {
         return _getTrimText(
-            currentText, widget.textStyle!, slab, _textPainter, textWidth);
+            currentText, widget.textStyle, slab, _textPainter, textWidth);
       }
     }
 

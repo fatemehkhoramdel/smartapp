@@ -810,7 +810,7 @@ class ZoomableController extends ChangeNotifier {
 
   /// Holds the current action type of the widget.
   ActionType get action => _action;
-  ActionType _action = ActionType.none;
+  final ActionType _action = ActionType.none;
 
   /// Holds the current zoomLevel of the zoomable widget.
   double get zoomLevel => _zoomLevel;

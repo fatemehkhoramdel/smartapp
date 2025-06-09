@@ -944,7 +944,7 @@ class SfMapsThemeData with Diagnosticable {
       tooltipStrokeWidth:
           lerpDouble(a.tooltipStrokeWidth, b.tooltipStrokeWidth, t)!,
       tooltipBorderRadius: BorderRadiusGeometry.lerp(
-          a.tooltipBorderRadius, b.tooltipBorderRadius, t)!,
+          a.tooltipBorderRadius, b.tooltipBorderRadius, t),
       toggledItemColor: Color.lerp(a.toggledItemColor, b.toggledItemColor, t),
       toggledItemStrokeColor:
           Color.lerp(a.toggledItemStrokeColor, b.toggledItemStrokeColor, t),

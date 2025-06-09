@@ -110,7 +110,7 @@ class _SchedulingViewMobileState extends State<SchedulingViewMobile> {
       final repo = SchedulingRepository(_appDatabase!);
       
       // Check if device exists and has a valid ID
-      if (_device != null && _device.id != null) {
+      if (_device.id != null) {
         _schedules = await repo.getSchedulesForDevice(_device.id.toString());
       } else {
         _schedules = [];
@@ -209,100 +209,6 @@ class _SchedulingViewMobileState extends State<SchedulingViewMobile> {
                 onPressed: () => Navigator.of(context).pop(),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
-                  padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
-                ),
-                child: Text(
-                  'بازگشت',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-    
-    // Check if device is null
-    if (_device == null) {
-      return Scaffold(
-        backgroundColor: const Color(0xFF09162E), // Dark blue background
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF09162E),
-          elevation: 0,
-          title: Text(
-            translate('تنظیمات'),
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18.sp,
-            ),
-          ),
-          centerTitle: false,
-          actions: [
-            Container(
-              margin: EdgeInsets.only(left: 10.w),
-              decoration: BoxDecoration(
-                color: const Color(0xFF142850),
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: IconButton(
-                icon: Icon(
-                  Icons.chevron_right,
-                  color: Colors.white,
-                  size: 24.sp,
-                ),
-                onPressed: () => Navigator.pop(context)
-                ,
-              ),
-            )
-          ],
-          leading: Container(
-            margin: EdgeInsets.only(right: 10.w),
-            decoration: BoxDecoration(
-              color: const Color(0xFF142850),
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 24.sp,
-              ),
-              onPressed: () {
-                getDrawerKey('SchedulingView').currentState!.toggle();
-              },
-            ),
-          ),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.device_unknown, color: Colors.amber, size: 48),
-              SizedBox(height: 16.h),
-              Text(
-                'دستگاهی انتخاب نشده است',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                'لطفاً ابتدا یک دستگاه را انتخاب کنید',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14.sp,
-                ),
-              ),
-              SizedBox(height: 24.h),
-              ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
                   padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
                 ),
                 child: Text(

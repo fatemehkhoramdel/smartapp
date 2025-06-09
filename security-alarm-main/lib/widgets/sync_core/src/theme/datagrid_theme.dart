@@ -814,7 +814,7 @@ class DataGridCurrentCellStyle {
       return null;
     }
     return DataGridCurrentCellStyle(
-        borderColor: Color.lerp(a!.borderColor, b!.borderColor, t)!,
+        borderColor: Color.lerp(a!.borderColor, b!.borderColor, t),
         borderWidth: lerpDouble(a.borderWidth, b.borderWidth, t)!);
   }
 }

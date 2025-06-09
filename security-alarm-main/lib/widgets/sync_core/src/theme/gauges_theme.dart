@@ -814,7 +814,7 @@ class SfGaugeThemeData with Diagnosticable {
       return null;
     }
     return SfGaugeThemeData(
-      backgroundColor: Color.lerp(a!.backgroundColor, b!.backgroundColor, t)!,
+      backgroundColor: Color.lerp(a!.backgroundColor, b!.backgroundColor, t),
       titleColor: Color.lerp(a.titleColor, b.titleColor, t),
       axisLabelColor: Color.lerp(a.axisLabelColor, b.axisLabelColor, t),
       axisLineColor: Color.lerp(a.axisLineColor, b.axisLineColor, t),
@@ -822,18 +822,18 @@ class SfGaugeThemeData with Diagnosticable {
       minorTickColor: Color.lerp(a.minorTickColor, b.minorTickColor, t),
       markerColor: Color.lerp(a.markerColor, b.markerColor, t),
       markerBorderColor:
-          Color.lerp(a.markerBorderColor, b.markerBorderColor, t)!,
+          Color.lerp(a.markerBorderColor, b.markerBorderColor, t),
       needleColor: Color.lerp(a.needleColor, b.needleColor, t),
       knobColor: Color.lerp(a.knobColor, b.knobColor, t),
-      knobBorderColor: Color.lerp(a.knobBorderColor, b.knobBorderColor, t)!,
+      knobBorderColor: Color.lerp(a.knobBorderColor, b.knobBorderColor, t),
       tailColor: Color.lerp(a.tailColor, b.tailColor, t),
-      tailBorderColor: Color.lerp(a.tailBorderColor, b.tailBorderColor, t)!,
+      tailBorderColor: Color.lerp(a.tailBorderColor, b.tailBorderColor, t),
       rangePointerColor:
           Color.lerp(a.rangePointerColor, b.rangePointerColor, t),
       rangeColor: Color.lerp(a.rangeColor, b.rangeColor, t),
-      titleBorderColor: Color.lerp(a.titleBorderColor, b.titleBorderColor, t)!,
+      titleBorderColor: Color.lerp(a.titleBorderColor, b.titleBorderColor, t),
       titleBackgroundColor:
-          Color.lerp(a.titleBackgroundColor, b.titleBackgroundColor, t)!,
+          Color.lerp(a.titleBackgroundColor, b.titleBackgroundColor, t),
       titleTextStyle: TextStyle.lerp(a.titleTextStyle, b.titleTextStyle, t),
       axisLabelTextStyle:
           TextStyle.lerp(a.axisLabelTextStyle, b.axisLabelTextStyle, t),

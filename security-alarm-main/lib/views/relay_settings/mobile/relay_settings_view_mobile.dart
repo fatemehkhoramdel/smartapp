@@ -136,11 +136,6 @@ class _RelaySettingsViewMobileState extends State<RelaySettingsViewMobile> {
   
   // Save all settings and send SMS commands for changes
   Future<void> _saveSettings() async {
-    if (_mainProvider.selectedDevice == null) {
-      toastGenerator(translate('please_select_device_first'));
-      return;
-    }
-    
     setState(() {
       _isLoading = true;
     });
@@ -237,20 +232,15 @@ class _RelaySettingsViewMobileState extends State<RelaySettingsViewMobile> {
   
   // Send SMS command
   Future<void> _sendSms(String command, String operationType) async {
-    if (_mainProvider.selectedDevice == null) {
-      toastGenerator(translate('please_select_device_first'));
-      return;
-    }
-    
     try {
-      final phoneNumber = _mainProvider.selectedDevice!.devicePhone;
+      final phoneNumber = _mainProvider.selectedDevice.devicePhone;
       
       // Send the SMS
       final result = await injector<SMSRepository>().doSendSMS(
         message: command,
         phoneNumber: phoneNumber,
         smsCoolDownFinished: _mainProvider.smsCooldownFinished,
-        isManager: _mainProvider.selectedDevice!.isManager,
+        isManager: _mainProvider.selectedDevice.isManager,
         showConfirmDialog: false,
       );
       
@@ -273,7 +263,7 @@ class _RelaySettingsViewMobileState extends State<RelaySettingsViewMobile> {
   // Add new relay
   Future<void> _addNewRelay(String name) async {
     try {
-      final deviceId = _mainProvider.selectedDevice?.id;
+      final deviceId = _mainProvider.selectedDevice.id;
       if (deviceId == null) {
         toastGenerator(translate('error_adding_relay'));
         return;
