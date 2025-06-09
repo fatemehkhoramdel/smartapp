@@ -1,0 +1,26 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    - parameter_assignments  
+    - avoid_returning_null
+    - avoid_returning_null_for_future 
+
+analyzer:
+  exclude:
+    - lib/**.g.dart
+    - lib/**.freezed.dart
+  errors:
+    missing_required_param: error
+    parameter_assignments: error
+    missing_return: error
+    avoid_returning_null: error
+    avoid_returning_null_for_future: error
+    prefer_const_literals_to_create_immutables: ignore
+    constant_identifier_names: ignore
+    sort_pub_dependencies: ignore
+    non_constant_identifier_names: ignore
+    must_be_immutable: ignore
+    avoid_function_literals_in_foreach_calls: ignore
+    prefer_final_locals: ignore
+    prefer_final_fields: ignore

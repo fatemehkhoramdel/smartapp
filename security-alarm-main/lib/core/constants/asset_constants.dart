@@ -1,0 +1,22 @@
+/// Asset constants
+const String kIconLauncherAsset = 'assets/images/ic_launcher.png';
+const String kSplashAsset = 'assets/images/splash.png';
+const String kLocationAsset = 'assets/images/location.png';
+const String kPhoneAsset = 'assets/images/phone.png';
+const String kIrancellAsset = 'assets/images/irancell.png';
+const String kMCIAsset = 'assets/images/mci.jpg';
+const String kRightelAsset = 'assets/images/rightel.jpg';
+const String kDeactiveAsset = 'assets/images/deactive.png';
+const String kSemiActiveAsset = 'assets/images/semi_active.png';
+const String kActiveAsset = 'assets/images/active.png';
+const String kBottleAsset = "assets/images/bottle.png";
+const String kNoSignalAsset = "assets/images/no_signal.png";
+const String kSilentAsset = "assets/images/mute.png";
+const String kSpyAsset = "assets/images/spy.png";
+const String kActiveShieldAsset = "assets/images/active_shield.png";
+const String kSemiActiveShieldAsset = "assets/images/semi_active_shield.png";
+const String kDeactiveShieldAsset = "assets/images/deactive_shield.png";
+const String kLogoAsset = "assets/images/logo.png";
+const String kActiveHandleAsset = "assets/images/active_handle.png";
+const String kSemiActiveHandleAsset = "assets/images/semi_active_handle.png";
+const String kDeactiveHandleAsset = "assets/images/deactive_handle.png";
